@@ -33,6 +33,34 @@ To build the project run:
 ```bash
 ng build
 ```
+## Linting
+
+To lint the project run:
+
+```bash
+ng run lint
+```
+
+## Formatting
+
+To format the project run:
+
+```bash
+ng run format
+```
+## running db.json
+
+To run db.json in the project run:
+
+```bash
+npx json-server --watch db.json --port 3000
+```
+
+## Run tests
+```bash
+npm install
+ng test
+```
 
 This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 

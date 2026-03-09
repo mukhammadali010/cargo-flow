@@ -1,0 +1,67 @@
+<form nz-form [formGroup]="userForm" (ngSubmit)="submit()" [nzLayout]="'vertical'">
+  <div nz-col nzSpan="12"></div>
+  <div nz-row nzGutter="16">
+    <div nz-col nzSpan="12">
+      <nz-form-item>
+        <nz-form-label [nzRequired]="true">Name</nz-form-label>
+        <nz-form-control nzErrorTip="Please enter name">
+          <input nz-input formControlName="name" placeholder="User name" />
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+
+    <div nz-col nzSpan="12">
+      <nz-form-item>
+        <nz-form-label [nzRequired]="true">Phone</nz-form-label>
+        <nz-form-control nzErrorTip="Please enter phone number">
+          <input
+            nz-input
+            formControlName="phone"
+            mask="00 000 00 00"
+            prefix="+998 "
+            placeholder="+998 ___ __ __"
+            [dropSpecialCharacters]="true"
+          />
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+  </div>
+
+  <div nz-row nzGutter="16">
+    <div nz-col nzSpan="12">
+      <nz-form-item>
+        <nz-form-label [nzRequired]="true">Password</nz-form-label>
+        <nz-form-control nzErrorTip="Please enter phone password">
+          <nz-input-password>
+            <input nz-input formControlName="password" placeholder="Password number" />
+          </nz-input-password>
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+    <div nz-col nzSpan="12">
+      <nz-form-item>
+        <nz-form-label [nzRequired]="true">Role</nz-form-label>
+        <nz-form-control nzErrorTip="">
+          <nz-select
+            nzShowSearch
+            nzAllowClear
+            nzPlaceHolder="Select a person"
+            formControlName="role"
+          >
+            @for (role of roles; track $index) {
+              <nz-option [nzLabel]="role.label" [nzValue]="role?.value" />
+            }
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+  </div>
+
+  <div class="flex justify-end gap-3 mt-4">
+    <button nz-button nzType="default" type="button" (click)="close()">Cancel</button>
+
+    <button nz-button nzType="primary" [disabled]="userForm.invalid">
+      {{ isEdit ? 'Update User' : 'Create User' }}
+    </button>
+  </div>
+</form>

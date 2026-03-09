@@ -15,7 +15,11 @@ export const DashboardRoutes: Routes = [
     loadChildren: () => import('./components/orders/orders.routes').then((m) => m.ORDER_ROUTES),
   },
   {
+    path: 'users',
+    loadComponent: () => import('./components/users/list/users').then((m) => m.Users),
+  },
+  {
     path: 'drivers',
-    loadComponent: () => import('./components/drivers/drivers').then((m) => m.Drivers),
+    loadComponent: () => import('./components/drivers/list/drivers').then((m) => m.Drivers),
   },
 ];

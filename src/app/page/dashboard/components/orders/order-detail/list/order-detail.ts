@@ -6,7 +6,7 @@ import { Order, OrderStatus, STATUS_TRANSITIONS } from '../../orders.model';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { NzTimelineModule } from 'ng-zorro-antd/timeline';
 import { DatePipe, DecimalPipe } from '@angular/common';
-import { StatusColorPipe } from '../../../../../../core/pipe/order-list-status.pipe';
+import { StatusColorPipe } from '../../../../../../shared/components/pipe/status-color.pipe';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { AuthService } from '../../../../../../features/auth/auth.service';

@@ -1,11 +1,12 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { OrderStatus } from '../../page/dashboard/components/orders/orders.model';
+import { OrderStatus } from '../../../page/dashboard/components/orders/orders.model';
+import { DriverStatus } from '../../../page/dashboard/components/drivers/model/drivers.model';
 
 @Pipe({
   name: 'statusColor',
 })
 export class StatusColorPipe implements PipeTransform {
-  transform(status: OrderStatus): string {
+  transform(status: OrderStatus | DriverStatus): string {
     switch (status) {
       case OrderStatus.ACTIVE:
         return 'green';
@@ -21,7 +22,12 @@ export class StatusColorPipe implements PipeTransform {
         return 'gold';
       case OrderStatus.REJECTED:
         return 'volcano';
-
+      case DriverStatus.AVAILABLE:
+        return 'green';
+      case DriverStatus.BUSY:
+        return 'processing';
+      case DriverStatus.OFFLINE:
+        return 'red';
       default:
         return 'default';
     }

@@ -1,25 +1,25 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Admin",
+      "name": "Muhammadali",
       "phone": "904061430",
-      "password": "admin",
-      "role": "MODERATOR"
+      "password": "3333",
+      "role": "MODERATOR",
+      "id": 1
     },
     {
-      "id": 2,
-      "name": "Sender User",
+      "name": "Akbar",
       "phone": "901111111",
-      "password": "sender",
-      "role": "SENDER"
+      "password": "1111",
+      "role": "SENDER",
+      "id": 2
     },
     {
-      "id": 3,
-      "name": "Carrier User",
+      "name": "Ali",
       "phone": "902222222",
-      "password": "carrier",
-      "role": "CARRIER"
+      "password": "2222",
+      "role": "CARRIER",
+      "id": 3
     }
   ],
   "orders": [
@@ -383,6 +383,108 @@
           "changedBy": "admin"
         }
       ]
+    }
+  ],
+  "drivers": [
+    {
+      "id": 1,
+      "firstName": "Ali",
+      "lastName": "Karimov",
+      "phone": "901111111",
+      "licenseNumber": "AA123456",
+      "licenseCategory": "C",
+      "experienceYears": 5,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": 2,
+      "firstName": "Jasur",
+      "lastName": "Toshev",
+      "phone": "933333333",
+      "licenseNumber": "BB654321",
+      "licenseCategory": "CE",
+      "experienceYears": 8,
+      "status": "BUSY"
+    },
+    {
+      "id": 3,
+      "firstName": "Bekzod",
+      "lastName": "Rahimov",
+      "phone": "977777777",
+      "licenseNumber": "CC987654",
+      "licenseCategory": "D",
+      "experienceYears": 3,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": 4,
+      "firstName": "Sherzod",
+      "lastName": "Akbarov",
+      "phone": "901222222",
+      "licenseNumber": "DD112233",
+      "licenseCategory": "C",
+      "experienceYears": 6,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": 5,
+      "firstName": "Dilshod",
+      "lastName": "Sodiqov",
+      "phone": "932222222",
+      "licenseNumber": "EE445566",
+      "licenseCategory": "CE",
+      "experienceYears": 9,
+      "status": "BUSY"
+    },
+    {
+      "id": 6,
+      "firstName": "Jamshid",
+      "lastName": "Yusupov",
+      "phone": "934444444",
+      "licenseNumber": "FF778899",
+      "licenseCategory": "D",
+      "experienceYears": 4,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": 7,
+      "firstName": "Rustam",
+      "lastName": "Qodirov",
+      "phone": "935555555",
+      "licenseNumber": "GG223344",
+      "licenseCategory": "CE",
+      "experienceYears": 7,
+      "status": "BUSY"
+    },
+    {
+      "id": 8,
+      "firstName": "Aziz",
+      "lastName": "Nazarov",
+      "phone": "936666666",
+      "licenseNumber": "HH556677",
+      "licenseCategory": "C",
+      "experienceYears": 5,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": 9,
+      "firstName": "Sardor",
+      "lastName": "Islomov",
+      "phone": "937777777",
+      "licenseNumber": "II889900",
+      "licenseCategory": "D",
+      "experienceYears": 2,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": 10,
+      "firstName": "Bekmurod",
+      "lastName": "Rahmatov",
+      "phone": "938888888",
+      "licenseNumber": "JJ334455",
+      "licenseCategory": "CE",
+      "experienceYears": 10,
+      "status": "BUSY"
     }
   ],
   "notifications": []

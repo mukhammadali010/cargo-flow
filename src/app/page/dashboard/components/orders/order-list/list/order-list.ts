@@ -5,7 +5,7 @@ import { NzTableModule } from 'ng-zorro-antd/table';
 import { OrderListService } from '../service/order-list.service';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzTagModule } from 'ng-zorro-antd/tag';
-import { StatusColorPipe } from '../../../../../../core/pipe/order-list-status.pipe';
+import { StatusColorPipe } from '../../../../../../shared/components/pipe/status-color.pipe';
 import { listOfColumnModel, Order } from '../../orders.model';
 import { CommonModule } from '@angular/common';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
@@ -13,10 +13,10 @@ import { NzInputDirective, NzInputWrapperComponent } from 'ng-zorro-antd/input';
 import { FormsModule } from '@angular/forms';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { DebounceInputDirective } from '../../../../../../core/directive/debounce-input';
-import { OrderFormModalComponent } from '../form/list-form-modal';
 import { NzModalModule, NzModalService } from 'ng-zorro-antd/modal';
 import { AlertService } from '../../../../../../core/services/alert.service';
 import { Router } from '@angular/router';
+import { OrderListFormComponent } from '../form/order-list-form';
 
 @Component({
   selector: 'app-order-list',
@@ -127,7 +127,7 @@ export class OrderList implements OnInit {
   openCreateModal() {
     const modal = this.modal.create({
       nzTitle: 'Create Transport Order',
-      nzContent: OrderFormModalComponent,
+      nzContent: OrderListFormComponent,
       nzFooter: null,
       nzWidth: 700,
     });
@@ -150,7 +150,7 @@ export class OrderList implements OnInit {
   openEditModal(order: Order) {
     const modal = this.modal.create({
       nzTitle: 'Edit Transport Order',
-      nzContent: OrderFormModalComponent,
+      nzContent: OrderListFormComponent,
       nzFooter: null,
       nzWidth: 700,
       nzData: order,

@@ -21,11 +21,11 @@ import { Order } from '../../orders.model';
     NzFormModule,
     NzGridModule,
   ],
-  templateUrl: './list-form-modal.html',
+  templateUrl: './order-list-form.html',
 })
-export class OrderFormModalComponent implements OnInit {
+export class OrderListFormComponent implements OnInit {
   private fb = inject(FormBuilder);
-  private modalRef = inject(NzModalRef<OrderFormModalComponent>);
+  private modalRef = inject(NzModalRef<OrderListFormComponent>);
   private data = inject(NZ_MODAL_DATA, { optional: true }) as Order | null;
   isVisible = false;
   isEdit = !!this.data;

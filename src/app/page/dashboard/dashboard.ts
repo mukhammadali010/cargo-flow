@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzIconModule } from 'ng-zorro-antd/icon';
@@ -25,15 +25,22 @@ import { NzDropdownModule } from 'ng-zorro-antd/dropdown';
   templateUrl: './dashboard.html',
   styleUrls: ['./dashboard.scss'],
 })
-export class Dashboard {
+export class Dashboard implements OnInit {
   authService = inject(AuthService);
   router = inject(Router);
-  sidebarMenus = signal<SidebarItem[]>(SIDEBAR_MENUS);
+  sidebarMenus = signal<SidebarItem[]>([]);
   isCollapsed = false;
   protected readonly date = new Date();
   logout() {
     this.authService.logout();
     this.router.navigate(['login']);
+  }
+
+  ngOnInit(): void {
+    const role = this.authService.user()?.role;
+    if (!role) return;
+    const filteredMenus = SIDEBAR_MENUS.filter((menu) => menu.roles.includes(role));
+    this.sidebarMenus.set(filteredMenus);
   }
 
   getAvatar() {

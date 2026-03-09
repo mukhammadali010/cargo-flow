@@ -11,6 +11,7 @@ import {
   UsergroupAddOutline,
   DeleteOutline,
   HomeOutline,
+  TruckOutline,
 } from '@ant-design/icons-angular/icons';
 
 export const icons = [
@@ -26,4 +27,5 @@ export const icons = [
   MenuUnfoldOutline,
   DeleteOutline,
   HomeOutline,
+  TruckOutline,
 ];

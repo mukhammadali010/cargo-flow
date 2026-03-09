@@ -3,6 +3,7 @@ export interface SidebarItem {
   label: string;
   icon: string;
   route?: string;
+  roles: string[];
 }
 
 export const SIDEBAR_MENUS: SidebarItem[] = [
@@ -11,29 +12,34 @@ export const SIDEBAR_MENUS: SidebarItem[] = [
     label: 'Home',
     icon: 'home',
     route: '/home',
+    roles: ['MODERATOR', 'SENDER', 'CARRIER'],
   },
   {
     id: 2,
     label: 'Orders',
     icon: 'product',
     route: '/dashboard/orders/list',
+    roles: ['MODERATOR', 'SENDER', 'CARRIER'],
   },
-  // {
-  //     id: 3,
-  //     label: 'Create Order',
-  //     icon: 'plus-circle',
-  //     route: '/dashboard/orders/new'
-  // },
+  {
+    id: 3,
+    label: 'Users',
+    icon: 'usergroup-add',
+    route: '/dashboard/users',
+    roles: ['MODERATOR'],
+  },
   {
     id: 4,
     label: 'Drivers',
-    icon: 'usergroup-add',
+    icon: 'truck',
     route: '/dashboard/drivers',
+    roles: ['MODERATOR', 'SENDER'],
   },
   {
     id: 5,
     label: 'Logout',
     icon: 'logout',
     route: '/login',
+    roles: ['MODERATOR', 'SENDER', 'CARRIER'],
   },
 ];

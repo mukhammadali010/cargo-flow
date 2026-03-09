@@ -1,0 +1,45 @@
+<div class="container flex items-center justify-between mb-4">
+  <h2 class="text-2xl font-sans font-bold">User List</h2>
+  <div class="flex gap-7 items-center w-1/2">
+    <nz-input-search nzAllowClear>
+      <input
+        nz-input
+        placeholder="search user..."
+        appDebounceInput
+        [debounceTimeValue]="500"
+        (searchValue)="search($event)"
+      />
+    </nz-input-search>
+    <button nz-button nzType="primary" (click)="openCreateModal()">+ New User</button>
+  </div>
+</div>
+
+<nz-table #basicTable [nzData]="userList()">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Role</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (data of basicTable.data; track data) {
+      <tr>
+        <td>{{ data.id }}</td>
+        <td>{{ data.name }}</td>
+        <td>{{ data.phone }}</td>
+        <td>{{ data.role }}</td>
+        <td>
+          <button nz-button nzType="default" (click)="openEditModal(data)">
+            <nz-icon nzType="edit" nzTheme="outline" />
+          </button>
+          <button nz-button nzType="default" nzDanger (click)="confirmDelete(data)">
+            <nz-icon nzType="delete" nzTheme="outline" />
+          </button>
+        </td>
+      </tr>
+    }
+  </tbody>
+</nz-table>

@@ -1,0 +1,31 @@
+<h2 class="font-sans text-2xl">Driver List</h2>
+<nz-table #basicTable [nzData]="driverList()">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>FirstName</th>
+      <th>LastName</th>
+      <th>License</th>
+      <th>Phone</th>
+      <th>Experience</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (data of basicTable.data; track data) {
+      <tr>
+        <td>{{ data.id }}</td>
+        <td>{{ data.firstName }}</td>
+        <td>{{ data.lastName }}</td>
+        <td>{{ data.licenseCategory }}</td>
+        <td>{{ data.phone }}</td>
+        <td>{{ data.experienceYears }}</td>
+        <td>
+          <nz-tag [nzColor]="data.status | statusColor">
+            {{ data.status }}
+          </nz-tag>
+        </td>
+      </tr>
+    }
+  </tbody>
+</nz-table>
