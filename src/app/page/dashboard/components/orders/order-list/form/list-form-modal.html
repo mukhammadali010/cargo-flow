@@ -1,68 +1,61 @@
 <form nz-form [formGroup]="orderForm" (ngSubmit)="submit()" [nzLayout]="'vertical'">
+  <div nz-col nzSpan="12">
+    <nz-form-item>
+      <nz-form-label [nzRequired]="true">Cargo Type</nz-form-label>
+      <nz-form-control nzErrorTip="Select cargo type">
+        <nz-select formControlName="cargoType" nzPlaceHolder="Select cargo type">
+          @for (type of cargoTypes; track type.value) {
+            <nz-option [nzValue]="type.value" [nzLabel]="type.label"> </nz-option>
+          }
+        </nz-select>
+      </nz-form-control>
+    </nz-form-item>
+  </div>
+  <div nz-row nzGutter="16">
     <div nz-col nzSpan="12">
-        <nz-form-item>
-            <nz-form-label [nzRequired]="true">Cargo Type</nz-form-label>
-            <nz-form-control nzErrorTip="Select cargo type">
-                <nz-select formControlName="cargoType" nzPlaceHolder="Select cargo type">
-                    <nz-option *ngFor="let type of cargoTypes" [nzValue]="type.value" [nzLabel]="type.label">
-                    </nz-option>
-                </nz-select>
-            </nz-form-control>
-        </nz-form-item>
-
-    </div>
-    <div nz-row nzGutter="16">
-
-        <div nz-col nzSpan="12">
-            <nz-form-item>
-                <nz-form-label [nzRequired]="true">From</nz-form-label>
-                <nz-form-control nzErrorTip="Please enter origin city">
-                    <input nz-input formControlName="from" placeholder="Origin city">
-                </nz-form-control>
-            </nz-form-item>
-        </div>
-
-        <div nz-col nzSpan="12">
-            <nz-form-item>
-                <nz-form-label [nzRequired]="true">To</nz-form-label>
-                <nz-form-control nzErrorTip="Please enter destination city">
-                    <input nz-input formControlName="to" placeholder="Destination city">
-                </nz-form-control>
-            </nz-form-item>
-        </div>
-
+      <nz-form-item>
+        <nz-form-label [nzRequired]="true">From</nz-form-label>
+        <nz-form-control nzErrorTip="Please enter origin city">
+          <input nz-input formControlName="from" placeholder="Origin city" />
+        </nz-form-control>
+      </nz-form-item>
     </div>
 
-    <div nz-row nzGutter="16">
+    <div nz-col nzSpan="12">
+      <nz-form-item>
+        <nz-form-label [nzRequired]="true">To</nz-form-label>
+        <nz-form-control nzErrorTip="Please enter destination city">
+          <input nz-input formControlName="to" placeholder="Destination city" />
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+  </div>
 
-        <div nz-col nzSpan="12">
-            <nz-form-item>
-                <nz-form-label [nzRequired]="true">Weight (kg)</nz-form-label>
-                <nz-form-control nzErrorTip="Weight must be between 1 and 40000">
-                    <input nz-input type="number" formControlName="weight">
-                </nz-form-control>
-            </nz-form-item>
-        </div>
-
-        <div nz-col nzSpan="12">
-            <nz-form-item>
-                <nz-form-label [nzRequired]="true">Price (UZS)</nz-form-label>
-                <nz-form-control nzErrorTip="Price must be greater than 0">
-                    <input nz-input type="number" formControlName="price">
-                </nz-form-control>
-            </nz-form-item>
-        </div>
-
+  <div nz-row nzGutter="16">
+    <div nz-col nzSpan="12">
+      <nz-form-item>
+        <nz-form-label [nzRequired]="true">Weight (kg)</nz-form-label>
+        <nz-form-control nzErrorTip="Weight must be between 1 and 40000">
+          <input nz-input type="number" formControlName="weight" />
+        </nz-form-control>
+      </nz-form-item>
     </div>
 
-    <div class="flex justify-end gap-3 mt-4">
-        <button nz-button nzType="default" type="button" (click)="close()">
-            Cancel
-        </button>
-
-        <button nz-button nzType="primary" [disabled]="orderForm.invalid">
-            {{ isEdit ? 'Update Order' : 'Create Order' }}
-        </button>
+    <div nz-col nzSpan="12">
+      <nz-form-item>
+        <nz-form-label [nzRequired]="true">Price (UZS)</nz-form-label>
+        <nz-form-control nzErrorTip="Price must be greater than 0">
+          <input nz-input type="number" formControlName="price" />
+        </nz-form-control>
+      </nz-form-item>
     </div>
+  </div>
 
+  <div class="flex justify-end gap-3 mt-4">
+    <button nz-button nzType="default" type="button" (click)="close()">Cancel</button>
+
+    <button nz-button nzType="primary" [disabled]="orderForm.invalid">
+      {{ isEdit ? 'Update Order' : 'Create Order' }}
+    </button>
+  </div>
 </form>

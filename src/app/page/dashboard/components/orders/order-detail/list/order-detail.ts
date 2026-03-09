@@ -2,7 +2,7 @@ import { Component, computed, inject, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NzModalModule, NzModalService } from 'ng-zorro-antd/modal';
 import { OrderListService } from '../../order-list/service/order-list.service';
-import { Order, STATUS_TRANSITIONS } from '../../orders.model';
+import { Order, OrderStatus, STATUS_TRANSITIONS } from '../../orders.model';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { NzTimelineModule } from 'ng-zorro-antd/timeline';
 import { DatePipe, DecimalPipe } from '@angular/common';
@@ -11,15 +11,22 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { AuthService } from '../../../../../../features/auth/auth.service';
 
-
 @Component({
   selector: 'app-order-detail',
   standalone: true,
-  imports: [NzTagModule, NzTimelineModule, DecimalPipe, DatePipe, NzModalModule, StatusColorPipe, NzSelectModule, NzButtonModule],
-  templateUrl: './order-detail.html'
+  imports: [
+    NzTagModule,
+    NzTimelineModule,
+    DecimalPipe,
+    DatePipe,
+    NzModalModule,
+    StatusColorPipe,
+    NzSelectModule,
+    NzButtonModule,
+  ],
+  templateUrl: './order-detail.html',
 })
 export class OrderDetail {
-
   private route = inject(ActivatedRoute);
   private modal = inject(NzModalService);
   private orderService = inject(OrderListService);
@@ -31,7 +38,7 @@ export class OrderDetail {
     return STATUS_TRANSITIONS[this.orderDetails().status];
   });
 
-  changeStatus(newStatus: any) {
+  changeStatus(newStatus: OrderStatus) {
     this.modal.confirm({
       nzTitle: 'Change Order Status',
       nzContent: `Change status to ${newStatus}?`,
@@ -40,26 +47,21 @@ export class OrderDetail {
         const updated: Order = {
           ...current,
           status: newStatus,
-          statusHistory: [...(current.statusHistory ?? []),
+          statusHistory: [
+            ...(current.statusHistory ?? []),
             {
               from: current.status,
               to: newStatus,
               date: new Date().toISOString(),
               changedAt: new Date().toISOString(),
-              changedBy: this.authService.user()?.name || "system"
-            }
-
-          ]
-
+              changedBy: this.authService.user()?.name || 'system',
+            },
+          ],
         };
-        this.orderService.update(updated).subscribe(res => {
+        this.orderService.update(updated).subscribe((res) => {
           this.orderDetails.set(res);
         });
-
-      }
-
+      },
     });
-
   }
-
 }

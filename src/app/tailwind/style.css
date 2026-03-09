@@ -15,26 +15,30 @@
   --color-card-third2: #fbe7b4;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
 @layer base {
   @layer base {
-  body {
-    font-family: sans-serif;
-  }
+    body {
+      font-family: sans-serif;
+    }
 
-  h1,h2,h3,h4,h5 {
-    font-family: sans-serif;
-    font-weight: 700;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: sans-serif;
+      font-weight: 700;
+    }
 
+    p {
+      font-family: sans-serif;
+    }
   }
-
-  p {
-    font-family: sans-serif;
-  }
-}
 }
 
 @layer utilities {

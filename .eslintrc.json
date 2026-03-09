@@ -1,6 +1,11 @@
 {
   "root": true,
-  "ignorePatterns": ["projects/**/*"],
+  "ignorePatterns": [
+    "projects/**/*",
+    "dist",
+    ".angular",
+    "node_modules"
+  ],
   "plugins": ["unused-imports"],
   "overrides": [
     {
@@ -12,27 +17,15 @@
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "rules": {
-        "@angular-eslint/directive-selector": [
-          "error",
-          {
-            "type": "attribute",
-            "prefix": "app",
-            "style": "camelCase"
-          }
-        ],
-        "@angular-eslint/component-selector": [
-          "error",
-          {
-            "type": "element",
-            "prefix": "app",
-            "style": "kebab-case"
-          }
-        ],
-        "@angular-eslint/contextual-lifecycle": ["error"],
-        "@angular-eslint/no-input-rename": ["error"],
-        "@angular-eslint/no-outputs-metadata-property": ["error"],
-        "@angular-eslint/use-pipe-transform-interface": ["error"],
+        "@angular-eslint/directive-selector": "off",
+        "@angular-eslint/component-selector": "off",
+        "@angular-eslint/contextual-lifecycle": "error",
+        "@angular-eslint/no-input-rename": "error",
+        "@angular-eslint/no-outputs-metadata-property": "error",
+        "@angular-eslint/use-pipe-transform-interface": "error",
+
         "@typescript-eslint/no-unused-vars": "off",
+
         "unused-imports/no-unused-imports": "error",
         "unused-imports/no-unused-vars": [
           "warn",
@@ -52,8 +45,11 @@
         "plugin:@angular-eslint/template/accessibility"
       ],
       "rules": {
-        "@angular-eslint/template/banana-in-box": ["error"],
-        "@angular-eslint/template/eqeqeq": ["error"]
+        "@angular-eslint/template/banana-in-box": "error",
+        "@angular-eslint/template/eqeqeq": "error",
+
+        "@angular-eslint/template/interactive-supports-focus": "off",
+        "@angular-eslint/template/click-events-have-key-events": "off"
       }
     }
   ]

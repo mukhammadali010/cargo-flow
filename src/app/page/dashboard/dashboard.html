@@ -1,37 +1,59 @@
 <nz-layout>
-    <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
-        <div class="logo flex items-center"><img src="images/logo.png" alt="" width="80px"></div>
-        <ul nz-menu nzTheme="light" nzMode="inline">
-            @for (item of sidebarMenus(); track item.id) {
-            <li nz-menu-item [routerLink]="item.route" (click)="item.label == 'Logout' ? logout() : ''">
-                <nz-icon [nzType]="item.icon" />
-                <span>{{item.label}}</span>
-            </li>
-            }
-        </ul>
-    </nz-sider>
-    <nz-layout>
-        <nz-header>
-            <nz-icon class="trigger" [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
-                (click)="isCollapsed = !isCollapsed" />
-            <div class="flex items-center" style="cursor: pointer" nz-dropdown nzTrigger="click" [nzDropdownMenu]="menuDropdown">
-                <span class="font-medium">
-                {{ authService.user()?.name }}
-            </span>
-            <nz-avatar [nzSrc]="getAvatar()" [nzSize]="48" class="cursor-pointer"></nz-avatar>
-            </div>
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+    <div class="logo flex items-center"><img src="images/logo.png" alt="" width="80px" /></div>
+    <ul nz-menu nzTheme="light" nzMode="inline">
+      @for (item of sidebarMenus(); track item.id) {
+        <li
+          nz-menu-item
+          [routerLink]="item.route"
+          tabindex="0"
+          (click)="item.label === 'Logout' ? logout() : ''"
+          (keyup.enter)="item.label === 'Logout' ? logout() : ''"
+        >
+          <nz-icon [nzType]="item.icon" />
+          <span>{{ item.label }}</span>
+        </li>
+      }
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header>
+      <nz-icon
+        class="trigger"
+        [tabIndex]="0"
+        [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+        (click)="isCollapsed = !isCollapsed"
+        (keyup.enter)="isCollapsed = !isCollapsed"
+      />
+      <div
+        class="flex items-center"
+        style="cursor: pointer"
+        nz-dropdown
+        nzTrigger="click"
+        [nzDropdownMenu]="menuDropdown"
+      >
+        <span class="font-medium">
+          {{ authService.user()?.name }}
+        </span>
+        <nz-avatar [nzSrc]="getAvatar()" [nzSize]="48" class="cursor-pointer"></nz-avatar>
+      </div>
 
-            <nz-dropdown-menu #menuDropdown="nzDropdownMenu">
-		<ul nz-menu>
-		  <li (click)="logout()" nz-menu-item ngx-translate><nz-icon nzType="logout"/> Logout</li>
-		</ul>
-	  </nz-dropdown-menu>
-        </nz-header>
-        <nz-content>
-            <div class="inner-content">
-                <router-outlet></router-outlet>
-            </div>
-        </nz-content>
-        <nz-footer>muhammadalinosirov34@gmail.com</nz-footer>
-    </nz-layout>
+      <nz-dropdown-menu #menuDropdown="nzDropdownMenu">
+        <ul nz-menu>
+          <li nz-menu-item ngx-translate>
+            <button nz-button nzType="text" (click)="logout()">
+              <nz-icon nzType="logout"></nz-icon>
+              Logout
+            </button>
+          </li>
+        </ul>
+      </nz-dropdown-menu>
+    </nz-header>
+    <nz-content>
+      <div class="inner-content">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+    <nz-footer>muhammadalinosirov34@gmail.com</nz-footer>
+  </nz-layout>
 </nz-layout>

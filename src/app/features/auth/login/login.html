@@ -1,37 +1,40 @@
 <div class="container mx-auto flex items-center flex-col justify-center h-dvh">
-    
-    <form nz-form [formGroup]="validateForm" class="login-form w-[400px]" (ngSubmit)="submitForm()">
-        <div>
-        <h1 class="font-sans text-3xl">Welcome back !</h1>
-        <p class="font-sans">Login to manage your logistics</p>
+  <form nz-form [formGroup]="validateForm" class="login-form w-[400px]" (ngSubmit)="submitForm()">
+    <div>
+      <h1 class="font-sans text-3xl">Welcome back !</h1>
+      <p class="font-sans">Login to manage your logistics</p>
     </div>
-        <nz-form-item>
-            <nz-form-control nzErrorTip="Please input your phone number!">
-                <nz-input-wrapper>
-                    <nz-icon nzInputPrefix nzType="phone" />
-                    <input nz-input formControlName="phone" mask="00 000 00 00" prefix="+998 "
-                        placeholder="+998 ___ __ __" [dropSpecialCharacters]="true" />
-                </nz-input-wrapper>
-            </nz-form-control>
-        </nz-form-item>
-        <nz-form-item>
-            <nz-form-control nzErrorTip="Please input your Password!">
-                <nz-input-password>
-                    <nz-icon nzInputPrefix nzType="lock" />
-                    <input nz-input formControlName="password" placeholder="Password" />
-                </nz-input-password>
-            </nz-form-control>
-        </nz-form-item>
-        <div nz-row class="login-form-margin">
-            <div nz-col [nzSpan]="12">
-                <label nz-checkbox formControlName="remember">
-                    <span>Remember me</span>
-                </label>
-            </div>
-            <div nz-col [nzSpan]="12">
-                <a class="login-form-forgot">Forgot password</a>
-            </div>
-        </div>
-        <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Log in</button>
-    </form>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your phone number!">
+        <nz-input-wrapper>
+          <nz-icon nzInputPrefix nzType="phone" />
+          <input
+            nz-input
+            formControlName="phone"
+            mask="00 000 00 00"
+            prefix="+998 "
+            placeholder="+998 ___ __ __"
+            [dropSpecialCharacters]="true"
+          />
+        </nz-input-wrapper>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your Password!">
+        <nz-input-password>
+          <nz-icon nzInputPrefix nzType="lock" />
+          <input nz-input formControlName="password" placeholder="Password" />
+        </nz-input-password>
+      </nz-form-control>
+    </nz-form-item>
+    <div nz-row class="login-form-margin">
+      <div nz-col [nzSpan]="12"></div>
+      <div nz-col [nzSpan]="12">
+        <a class="login-form-forgot">Forgot password</a>
+      </div>
+    </div>
+    <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">
+      Log in
+    </button>
+  </form>
 </div>

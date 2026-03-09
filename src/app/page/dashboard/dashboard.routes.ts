@@ -8,17 +8,14 @@ export const DashboardRoutes: Routes = [
   },
   {
     path: 'home',
-    loadComponent: () =>
-      import('./components/home/home').then((m) => m.Home),
+    loadComponent: () => import('./components/home/home').then((m) => m.Home),
   },
   {
     path: 'orders',
-    loadChildren: () =>
-      import('./components/orders/orders.routes').then((m) => m.ORDER_ROUTES),
+    loadChildren: () => import('./components/orders/orders.routes').then((m) => m.ORDER_ROUTES),
   },
   {
     path: 'drivers',
-    loadComponent: () =>
-      import('./components/drivers/drivers').then((m) => m.Drivers),
+    loadComponent: () => import('./components/drivers/drivers').then((m) => m.Drivers),
   },
 ];

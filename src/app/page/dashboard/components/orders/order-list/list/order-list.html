@@ -1,56 +1,66 @@
 <div class="container mx-auto">
-    <div class="flex items-center justify-between">
-        <div>
-            <h2 class="text-2xl font-sans">Transport Orders</h2>
-            <p class="font-sans">Manage and track your global logistics network real-time.</p>
-        </div>
-        <div class="flex gap-7 items-center w-1/2">
-            <nz-input-search nzAllowClear>
-                <input nz-input placeholder="search order..." debounceInput [debounceTimeValue]="500"
-                    (searchValue)="search($event)" />
-            </nz-input-search>
-            <button nz-button nzType="primary" (click)="openCreateModal()">+ New Transport Order</button>
-        </div>
+  <div class="flex items-center justify-between">
+    <div>
+      <h2 class="text-2xl font-sans">Transport Orders</h2>
+      <p class="font-sans">Manage and track your global logistics network real-time.</p>
     </div>
-    <nz-tabs (nzSelectedIndexChange)="onTabChange($event)">
-        <nz-tab nzTitle="All Orders"></nz-tab>
-        <nz-tab nzTitle="New"></nz-tab>
-        <nz-tab nzTitle="In Transit"></nz-tab>
-        <nz-tab nzTitle="Delivered"></nz-tab>
-        <nz-tab nzTitle="Cancelled"></nz-tab>
-    </nz-tabs>
-    <nz-table #sortTable [nzData]="filteredOrders()" nzTableLayout="fixed" >
-        <thead>
-            <tr>
-                @for (column of listOfColumn; track column) {
-                <th [nzWidth]="column.width ? column.width : ''">
-                    {{ column.title }}
-                </th>
-                }
-            </tr>
-        </thead>
-        <tbody>
-            @for (order of sortTable.data; track order.id) {
-            <tr>
-                <td nzWidth="60px">{{ order.id }}</td>
-                <td>{{ order.cargoType }}</td>
-                <td>{{ order.from }}</td>
-                <td>{{ order.to }}</td>
-                <td>
-                    <nz-tag [nzColor]="order.status | statusColor">
-                        {{ order.status }}
-                    </nz-tag>
-                </td>
-                <td>{{ order.weight }} kg</td>
-                <td>{{ order.price | number }} so'm</td>
-                <td>
-                    <button nz-button nzType="default" (click)="opdenOrderDetail(order.id)"><nz-icon nzType="eye" nzTheme="outline" /></button>
-                    <button nz-button nzType="default" (click)="openEditModal(order)"><nz-icon nzType="edit" nzTheme="outline"  /></button>
-                    <button nz-button nzType="default" nzDanger (click)="confirmDelete(order)"><nz-icon nzType="delete" nzTheme="outline" /></button>
-                </td>
-            </tr>
-            }
-        </tbody>
-    </nz-table>
-
+    <div class="flex gap-7 items-center w-1/2">
+      <nz-input-search nzAllowClear>
+        <input
+          nz-input
+          placeholder="search order..."
+          appDebounceInput
+          [debounceTimeValue]="500"
+          (searchValue)="search($event)"
+        />
+      </nz-input-search>
+      <button nz-button nzType="primary" (click)="openCreateModal()">+ New Transport Order</button>
+    </div>
+  </div>
+  <nz-tabs (nzSelectedIndexChange)="onTabChange($event)">
+    <nz-tab nzTitle="All Orders"></nz-tab>
+    <nz-tab nzTitle="New"></nz-tab>
+    <nz-tab nzTitle="In Transit"></nz-tab>
+    <nz-tab nzTitle="Delivered"></nz-tab>
+    <nz-tab nzTitle="Cancelled"></nz-tab>
+  </nz-tabs>
+  <nz-table #sortTable [nzData]="filteredOrders()" nzTableLayout="fixed">
+    <thead>
+      <tr>
+        @for (column of listOfColumn; track column) {
+          <th [nzWidth]="column.width ? column.width : ''">
+            {{ column.title }}
+          </th>
+        }
+      </tr>
+    </thead>
+    <tbody>
+      @for (order of sortTable.data; track order.id) {
+        <tr>
+          <td nzWidth="60px">{{ order.id }}</td>
+          <td>{{ order.cargoType }}</td>
+          <td>{{ order.from }}</td>
+          <td>{{ order.to }}</td>
+          <td>
+            <nz-tag [nzColor]="order.status | statusColor">
+              {{ order.status }}
+            </nz-tag>
+          </td>
+          <td>{{ order.weight }} kg</td>
+          <td>{{ order.price | number }} so'm</td>
+          <td>
+            <button nz-button nzType="default" (click)="opdenOrderDetail(order.id)">
+              <nz-icon nzType="eye" nzTheme="outline" />
+            </button>
+            <button nz-button nzType="default" (click)="openEditModal(order)">
+              <nz-icon nzType="edit" nzTheme="outline" />
+            </button>
+            <button nz-button nzType="default" nzDanger (click)="confirmDelete(order)">
+              <nz-icon nzType="delete" nzTheme="outline" />
+            </button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </nz-table>
 </div>

@@ -11,16 +11,14 @@ export const routes: Routes = [
   },
   {
     path: 'dashboard',
-    canActivate:[authGuard],
-    loadComponent: () =>
-      import('./page/dashboard/dashboard').then((m) => m.Dashboard),
+    canActivate: [authGuard],
+    loadComponent: () => import('./page/dashboard/dashboard').then((m) => m.Dashboard),
     children: DashboardRoutes,
   },
   {
     path: 'login',
-    canActivate:[noAuthGuard],
-    loadComponent: () =>
-      import('./features/auth/login/login').then((m) => m.Login),
+    canActivate: [noAuthGuard],
+    loadComponent: () => import('./features/auth/login/login').then((m) => m.Login),
   },
   {
     path: '**',
