@@ -144,7 +144,6 @@ export class OrderList implements OnInit {
 
     modal.afterClose.subscribe(result => {
       if (result) {
-        console.log('UPDATE', result);
         this.orderListService.update(result).pipe(takeUntilDestroyed(this.destroyRef)).subscribe({
           next: (res) => {
             this.orders.update(order => order.map(o => o.id === res.id ? res : o));
