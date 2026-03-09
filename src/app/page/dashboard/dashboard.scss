@@ -1,0 +1,44 @@
+nz-layout {
+  min-height: 100vh;
+}
+
+.logo {
+  height: 32px;
+  margin: 16px;
+}
+
+nz-sider{
+  background-color: white !important;
+}
+nz-header {
+  padding: 0;
+  padding-right: 2rem;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.trigger {
+  font-size: 18px;
+  padding: 0 24px;
+  cursor: pointer;
+}
+
+.inner-content {
+  margin-top: 24px;
+  padding: 24px;
+  background: #fff;
+}
+
+nz-content {
+  margin: 0 16px;
+}
+
+nz-footer {
+  text-align: center;
+}
+
+.logout{
+    margin-top: 100%;
+}

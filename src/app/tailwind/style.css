@@ -1,1 +1,45 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+@theme {
+  --font-base: 'Inter', 'sans-serif';
+  --font-heading: 'Inter';
+  --space-lg: '150px';
+  --color-primary: #f5f1fd;
+  --color-btn-primary: #5c42f2;
+  --color-btn-secondary: #ddd8fb;
+  --color-card-first1: #c7c1eb;
+  --color-card-first2: #ddd8fb;
+  --color-card-second1: #edbcad;
+  --color-card-second2: #f5d0c5;
+  --color-card-third1: #fed670;
+  --color-card-third2: #fbe7b4;
+}
+
+html, body {
+  height: 100%;
+}
+
+@layer base {
+  @layer base {
+  body {
+    font-family: sans-serif;
+  }
+
+  h1,h2,h3,h4,h5 {
+    font-family: sans-serif;
+    font-weight: 700;
+
+  }
+
+  p {
+    font-family: sans-serif;
+  }
+}
+}
+
+@layer utilities {
+}
+
+.p-breadcrumb {
+  background-color: var(--color-primary) !important;
+}

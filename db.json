@@ -1,0 +1,389 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Admin",
+      "phone": "904061430",
+      "password": "admin",
+      "role": "MODERATOR"
+    },
+    {
+      "id": 2,
+      "name": "Sender User",
+      "phone": "901111111",
+      "password": "sender",
+      "role": "SENDER"
+    },
+    {
+      "id": 3,
+      "name": "Carrier User",
+      "phone": "902222222",
+      "password": "carrier",
+      "role": "CARRIER"
+    }
+  ],
+  "orders": [
+    {
+      "from": "Андижан",
+      "to": "Ташкент",
+      "cargoType": "general",
+      "weight": 8001,
+      "price": 4200000,
+      "status": "active",
+      "id": 5,
+      "statusHistory": [
+        {
+          "from": "new",
+          "to": "moderation",
+          "date": "2026-03-09T00:55:08.985Z",
+          "changedAt": "2026-03-09T00:55:08.985Z",
+          "changedBy": "admin"
+        },
+        {
+          "from": "moderation",
+          "to": "active",
+          "date": "2026-03-09T00:55:15.066Z",
+          "changedAt": "2026-03-09T00:55:15.066Z",
+          "changedBy": "admin"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "from": "Самарканд",
+      "to": "Бухара",
+      "cargoType": "fragile",
+      "weight": 3500,
+      "price": 2100000,
+      "status": "cancelled",
+      "createdAt": "2026-03-02T10:00:00Z",
+      "updatedAt": "2026-03-03T12:00:00Z",
+      "statusHistory": [
+        {
+          "from": "active",
+          "to": "cancelled",
+          "date": "2026-03-09T01:20:27.070Z",
+          "changedAt": "2026-03-09T01:20:27.070Z",
+          "changedBy": "admin"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "from": "Карши",
+      "to": "Навои",
+      "cargoType": "perishable",
+      "weight": 1500,
+      "price": 1200000,
+      "status": "delivered",
+      "createdAt": "2026-03-05T08:00:00Z",
+      "updatedAt": "2026-03-06T16:00:00Z",
+      "statusHistory": [
+        {
+          "from": "in_transit",
+          "to": "delivered",
+          "date": "2026-03-09T01:03:12.451Z",
+          "changedAt": "2026-03-09T01:03:12.451Z",
+          "changedBy": "admin"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "from": "Хива",
+      "to": "Нукус",
+      "cargoType": "oversized",
+      "weight": 28000,
+      "price": 13500000,
+      "status": "delivered",
+      "createdAt": "2026-02-15T10:00:00Z",
+      "updatedAt": "2026-02-20T18:00:00Z",
+      "statusHistory": []
+    },
+    {
+      "id": 9,
+      "from": "Термез",
+      "to": "Самарканд",
+      "cargoType": "general",
+      "weight": 6000,
+      "price": 3200000,
+      "status": "cancelled",
+      "createdAt": "2026-03-03T09:30:00Z",
+      "updatedAt": "2026-03-03T11:00:00Z",
+      "statusHistory": []
+    },
+    {
+      "id": 10,
+      "from": "Навои",
+      "to": "Бухара",
+      "cargoType": "fragile",
+      "weight": 2200,
+      "price": 1700000,
+      "status": "cancelled",
+      "createdAt": "2026-02-28T10:00:00Z",
+      "updatedAt": "2026-02-28T12:00:00Z",
+      "statusHistory": []
+    },
+    {
+      "id": 11,
+      "from": "Ташкент",
+      "to": "Андижан",
+      "cargoType": "general",
+      "weight": 9000,
+      "price": 4500000,
+      "status": "delivered",
+      "createdAt": "2026-03-05T10:00:00Z",
+      "updatedAt": "2026-03-05T10:00:00Z",
+      "statusHistory": [
+        {
+          "from": "new",
+          "to": "moderation",
+          "date": "2026-03-09T00:48:37.867Z",
+          "changedAt": "2026-03-09T00:48:37.867Z",
+          "changedBy": "admin"
+        },
+        {
+          "from": "moderation",
+          "to": "active",
+          "date": "2026-03-09T00:48:44.833Z",
+          "changedAt": "2026-03-09T00:48:44.833Z",
+          "changedBy": "admin"
+        },
+        {
+          "from": "active",
+          "to": "in_transit",
+          "date": "2026-03-09T00:48:49.184Z",
+          "changedAt": "2026-03-09T00:48:49.184Z",
+          "changedBy": "admin"
+        },
+        {
+          "from": "in_transit",
+          "to": "delivered",
+          "date": "2026-03-09T00:48:52.867Z",
+          "changedAt": "2026-03-09T00:48:52.867Z",
+          "changedBy": "admin"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "from": "Самарканд",
+      "to": "Карши",
+      "cargoType": "fragile",
+      "weight": 3200,
+      "price": 2100000,
+      "status": "delivered",
+      "createdAt": "2026-03-04T09:00:00Z",
+      "updatedAt": "2026-03-04T14:00:00Z",
+      "statusHistory": [
+        {
+          "from": "active",
+          "to": "in_transit",
+          "date": "2026-03-09T01:25:03.139Z",
+          "changedAt": "2026-03-09T01:25:03.139Z",
+          "changedBy": "computed2"
+        },
+        {
+          "from": "in_transit",
+          "to": "delivered",
+          "date": "2026-03-09T01:25:57.555Z",
+          "changedAt": "2026-03-09T01:25:57.555Z",
+          "changedBy": "Sender User"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "from": "Бухара",
+      "to": "Навои",
+      "cargoType": "perishable",
+      "weight": 1800,
+      "price": 1500000,
+      "status": "delivered",
+      "createdAt": "2026-03-03T08:00:00Z",
+      "updatedAt": "2026-03-03T16:00:00Z",
+      "statusHistory": [
+        {
+          "from": "in_transit",
+          "to": "delivered",
+          "date": "2026-03-09T01:12:17.770Z",
+          "changedAt": "2026-03-09T01:12:17.770Z",
+          "changedBy": "admin"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "from": "Фергана",
+      "to": "Ташкент",
+      "cargoType": "general",
+      "weight": 4000,
+      "price": 2600000,
+      "status": "cancelled",
+      "createdAt": "2026-03-02T10:00:00Z",
+      "updatedAt": "2026-03-02T12:00:00Z",
+      "statusHistory": []
+    },
+    {
+      "id": 15,
+      "from": "Нукус",
+      "to": "Ургенч",
+      "cargoType": "oversized",
+      "weight": 26000,
+      "price": 12000000,
+      "status": "delivered",
+      "createdAt": "2026-02-20T10:00:00Z",
+      "updatedAt": "2026-02-24T18:00:00Z",
+      "statusHistory": []
+    },
+    {
+      "id": 16,
+      "from": "Термез",
+      "to": "Самарканд",
+      "cargoType": "general",
+      "weight": 7000,
+      "price": 3500000,
+      "status": "active",
+      "createdAt": "2026-03-06T08:30:00Z",
+      "updatedAt": "2026-03-06T13:00:00Z",
+      "statusHistory": []
+    },
+    {
+      "id": 17,
+      "from": "Карши",
+      "to": "Навои",
+      "cargoType": "perishable",
+      "weight": 1400,
+      "price": 1300000,
+      "status": "rejected",
+      "createdAt": "2026-03-07T09:00:00Z",
+      "updatedAt": "2026-03-07T09:00:00Z",
+      "statusHistory": [
+        {
+          "from": "new",
+          "to": "moderation",
+          "date": "2026-03-09T01:16:07.055Z",
+          "changedAt": "2026-03-09T01:16:07.055Z",
+          "changedBy": "admin"
+        },
+        {
+          "from": "moderation",
+          "to": "rejected",
+          "date": "2026-03-09T01:16:11.372Z",
+          "changedAt": "2026-03-09T01:16:11.372Z",
+          "changedBy": "admin"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "from": "Андижан",
+      "to": "Фергана",
+      "cargoType": "fragile",
+      "weight": 2000,
+      "price": 1600000,
+      "status": "cancelled",
+      "createdAt": "2026-03-01T10:00:00Z",
+      "updatedAt": "2026-03-01T11:00:00Z",
+      "statusHistory": []
+    },
+    {
+      "id": 19,
+      "from": "Навои",
+      "to": "Бухара",
+      "cargoType": "general",
+      "weight": 6000,
+      "price": 3100000,
+      "status": "in_transit",
+      "createdAt": "2026-03-02T08:00:00Z",
+      "updatedAt": "2026-03-02T15:00:00Z",
+      "statusHistory": []
+    },
+    {
+      "id": 20,
+      "from": "Ташкент",
+      "to": "Самарканд",
+      "cargoType": "oversized",
+      "weight": 25000,
+      "price": 11000000,
+      "status": "delivered",
+      "createdAt": "2026-02-10T09:00:00Z",
+      "updatedAt": "2026-02-15T18:00:00Z",
+      "statusHistory": []
+    },
+    {
+      "from": "Toshkent",
+      "to": "Fargona",
+      "cargoType": "fragile",
+      "weight": 2343,
+      "price": 3452423,
+      "status": "new",
+      "id": 22
+    },
+    {
+      "from": "Fergana",
+      "to": "Andijan",
+      "cargoType": "fragile",
+      "weight": 234,
+      "price": 23434,
+      "status": "active",
+      "id": 23,
+      "statusHistory": [
+        {
+          "from": "new",
+          "to": "moderation",
+          "date": "2026-03-09T01:33:17.792Z",
+          "changedAt": "2026-03-09T01:33:17.792Z",
+          "changedBy": "Admin"
+        },
+        {
+          "from": "moderation",
+          "to": "active",
+          "date": "2026-03-09T01:33:20.407Z",
+          "changedAt": "2026-03-09T01:33:20.407Z",
+          "changedBy": "Admin"
+        }
+      ]
+    },
+    {
+      "from": "Andijan",
+      "to": "Tashkent",
+      "cargoType": "perishable",
+      "weight": 123,
+      "price": 2341243,
+      "status": "delivered",
+      "id": 24,
+      "statusHistory": [
+        {
+          "from": "new",
+          "to": "moderation",
+          "date": "2026-03-09T01:17:18.390Z",
+          "changedAt": "2026-03-09T01:17:18.390Z",
+          "changedBy": "admin"
+        },
+        {
+          "from": "moderation",
+          "to": "active",
+          "date": "2026-03-09T01:17:23.455Z",
+          "changedAt": "2026-03-09T01:17:23.455Z",
+          "changedBy": "admin"
+        },
+        {
+          "from": "active",
+          "to": "in_transit",
+          "date": "2026-03-09T01:17:27.157Z",
+          "changedAt": "2026-03-09T01:17:27.157Z",
+          "changedBy": "admin"
+        },
+        {
+          "from": "in_transit",
+          "to": "delivered",
+          "date": "2026-03-09T01:17:32.106Z",
+          "changedAt": "2026-03-09T01:17:32.106Z",
+          "changedBy": "admin"
+        }
+      ]
+    }
+  ],
+  "notifications": []
+}
