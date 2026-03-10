@@ -29,7 +29,7 @@
       "cargoType": "general",
       "weight": 8001,
       "price": 4200000,
-      "status": "active",
+      "status": "cancelled",
       "id": 5,
       "statusHistory": [
         {
@@ -45,6 +45,20 @@
           "date": "2026-03-09T00:55:15.066Z",
           "changedAt": "2026-03-09T00:55:15.066Z",
           "changedBy": "admin"
+        },
+        {
+          "from": "active",
+          "to": "in_transit",
+          "date": "2026-03-10T12:31:38.847Z",
+          "changedAt": "2026-03-10T12:31:38.847Z",
+          "changedBy": "Muhammadali"
+        },
+        {
+          "from": "in_transit",
+          "to": "cancelled",
+          "date": "2026-03-10T12:31:43.680Z",
+          "changedAt": "2026-03-10T12:31:43.680Z",
+          "changedBy": "Muhammadali"
         }
       ]
     },

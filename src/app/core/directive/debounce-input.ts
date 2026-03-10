@@ -26,7 +26,7 @@ export class DebounceInputDirective implements AfterViewInit {
   ngAfterViewInit(): void {
     fromEvent(this.elementRef.nativeElement, 'input')
       .pipe(
-        map(() => this.elementRef.nativeElement.value),
+        map(() => this.value),
         debounceTime(this.debounceTimeValue()),
         distinctUntilChanged(),
         takeUntilDestroyed(this.destroyRef),

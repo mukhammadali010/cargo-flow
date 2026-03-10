@@ -38,7 +38,7 @@ ng build
 To lint the project run:
 
 ```bash
-ng run lint
+npm run lint
 ```
 
 ## Formatting
@@ -46,7 +46,7 @@ ng run lint
 To format the project run:
 
 ```bash
-ng run format
+npm run format
 ```
 ## running db.json
 
